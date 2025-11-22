@@ -1,6 +1,7 @@
 import { getData } from "./actions";
 import { Product } from "./model/product.model";
 import { Query } from "./model/query.model";
+import AddToCartBtn from "./ui/AddToCartBtn";
 
 
 export default async function Home({searchParams}:{searchParams: Query }) {
@@ -55,7 +56,8 @@ export default async function Home({searchParams}:{searchParams: Query }) {
                                             <div className="card-body justify-content-between">
                                                 <div className="card-price">{product.price} ₽</div>
                                                 <h5 className="card-title">{product.title}</h5>
-                                                <button className="btn btn-primary">В корзину</button>
+                                                <AddToCartBtn product={product} />
+                                                
                                             </div>
                                         </div>
                                     </div>
